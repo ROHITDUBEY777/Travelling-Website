@@ -4,10 +4,12 @@ import image from "../assets/images/hack.jpg"
 const Hero = () => {
   return (
     <div>
-       <div className='relative items-center    flex justify-center top-0    z-10 min-h-screen'>
+       <div id='Hero' className='relative items-center    flex justify-center top-0    z-10 min-h-screen'>
          
-         <div className='bg-gradient-to-b inset-0  w-full absolute z-10 from-transparent via-transparent  to-zinc-950 '></div>
-        <img src={image} className='   w-2/2 h-full object-cover' alt="" />
+         <div className='bg-gradient-to-b inset-0 min-h-screen z-10  w-full absolute  from-transparent via-transparent  to-zinc-950 '>
+          
+         </div>
+        <img src={image} className='top-0 inset-0  -z-10  w-2/2 h-full object-cover' alt="" />
           
           <div className='absolute flex mt-72 items-center gap-4 text-center z-10 justify-center top-0 flex-col '>
             
@@ -19,9 +21,9 @@ const Hero = () => {
          
 
        </div>
-      
+
     </div>
   )
 }
 
-export default Hero
+export default Hero       
