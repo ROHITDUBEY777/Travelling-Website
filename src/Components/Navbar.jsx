@@ -1,9 +1,8 @@
 import React from 'react'
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import { SignedIn, SignedOut, SignIn, SignInButton, UserButton } from '@clerk/clerk-react';
 
 const Navbar = () => {
-
-
 
 
 
@@ -21,6 +20,7 @@ const Navbar = () => {
         }
 
   }
+  
   return (
     <div className='poppins fixed   w-full bg-transparent  backdrop-blur-3xl text-2xl text-white  py-5  px-4  accent-zinc-100 z-50  top-0 left-0 right-0 justify-center text-center  md:justify-between flex flex-row '>
        <h1 className=' text-center'>TravelSafe</h1>
@@ -31,8 +31,20 @@ const Navbar = () => {
             <li onClick={() => handlescroll("About")} className= ' cursor-pointer hover:text-amber-400'>About</li>
             <li onClick={() => handlescroll("Contact")}  className=' cursor-pointer hover:text-amber-400'>Contact</li>
         </ul>
-       </nav>
-       <button className='cursor-pointer text-white border md:px-4 md:py-1 text-xl hover:text-black hover:bg-white hover:scale-105 transition-transform duration-300 rounded-3xl bg-black '>Book Now </button>
+       </nav> 
+       <div className='gap-4 flex'>
+         <div className='cursor-pointer my-auto'>
+           <header >
+      <SignedOut>
+        <SignInButton />
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
+    </header>
+         </div>
+       <button className='cursor-pointer my-auto text-white border md:px-4 md:py-1 text-xl hover:text-black hover:bg-white hover:scale-105 transition-transform duration-300 rounded-3xl bg-black '>Book Now </button>
+       </div>
     </div>
   )
 }
